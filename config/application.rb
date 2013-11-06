@@ -6,6 +6,7 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "active_resource/railtie"
 require "sprockets/railtie"
+require File.expand_path('../boot', __FILE__)
 # require "rails/test_unit/railtie"
 
 if defined?(Bundler)
@@ -64,5 +65,6 @@ module SampleApp
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
   end
 end
